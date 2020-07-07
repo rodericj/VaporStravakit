@@ -13,7 +13,18 @@ extension Client {
         }
     }
 }
+public struct VaporStrava {
+
+    public static var safeOptionalDecoding = false
+    public static var safeArrayDecoding = false
+    /// Used to encode Dates when uses as string params
+    public static var dateEncodingFormatter = DateFormatter(formatString: "yyyy-MM-dd'T'HH:mm:ssZZZZZ",
+                                                            locale: Locale(identifier: "en_US_POSIX"),
+                                                            calendar: Calendar(identifier: .gregorian))
+}
+
 public enum Server {
+
     public static let version = "3.0.0"
     public static let main = "https://www.strava.com/api/v3"
 }
